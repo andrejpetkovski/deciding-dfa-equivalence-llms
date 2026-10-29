@@ -1,0 +1,33 @@
+{
+ "status": 503,
+ "body": {
+  "error": {
+   "code": "503",
+   "message": "litellm.ServiceUnavailableError: ServiceUnavailableError: OpenAIException - Error from provider (Console): Upstream request failed: Endpoint is unavailable.. Received Model Group=mimo-v2.5-free\nAvailable Model Group Fallbacks=None",
+   "param": null,
+   "type": null
+  }
+ },
+ "response_headers": {
+  "content-length": "293",
+  "content-security-policy": "frame-ancestors 'none'",
+  "content-type": "application/json",
+  "date": "Mon, 07 Sep 2026 17:38:17 GMT",
+  "referrer-policy": "strict-origin-when-cross-origin",
+  "server": "uvicorn",
+  "strict-transport-security": "max-age=31536000",
+  "via": "1.1 Caddy",
+  "x-content-type-options": "nosniff, nosniff",
+  "x-frame-options": "DENY",
+  "x-litellm-applied-guardrails": "gateway-credential-protection",
+  "x-litellm-applied-policies": "gateway-baseline",
+  "x-litellm-call-id": "b7b6bf46-16df-4c44-86ab-2e69062b10e4",
+  "x-litellm-key-max-budget": "5.0",
+  "x-litellm-key-rpm-limit": "10",
+  "x-litellm-key-spend": "0.0",
+  "x-litellm-key-tpm-limit": "20000",
+  "x-litellm-policy-sources": "gateway-baseline=scope:*",
+  "x-litellm-response-cost": "0",
+  "x-litellm-timeout": "600.0"
+ }
+}

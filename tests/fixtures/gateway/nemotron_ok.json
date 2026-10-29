@@ -1,0 +1,96 @@
+{
+ "status": 200,
+ "body": {
+  "choices": [
+   {
+    "finish_reason": "stop",
+    "index": 0,
+    "message": {
+     "content": "ok",
+     "provider_specific_fields": {
+      "reasoning": "The user wants a single word reply: \"ok\". I should just output that.",
+      "reasoning_details": [
+       {
+        "format": "unknown",
+        "index": 0,
+        "text": "The user wants a single word reply: \"ok\". I should just output that.",
+        "type": "reasoning.text"
+       }
+      ],
+      "refusal": null
+     },
+     "reasoning_content": "The user wants a single word reply: \"ok\". I should just output that.",
+     "role": "assistant"
+    },
+    "provider_specific_fields": {}
+   }
+  ],
+  "cost": "0",
+  "created": 1788804440,
+  "id": "gen-1788804440-SPVp9l2F5Y6nAnCuyNTf",
+  "model": "nemotron-3-ultra-free",
+  "object": "chat.completion",
+  "usage": {
+   "completion_tokens": 20,
+   "completion_tokens_details": {
+    "audio_tokens": 0,
+    "reasoning_tokens": 17
+   },
+   "prompt_tokens": 23,
+   "prompt_tokens_details": {
+    "audio_tokens": 0,
+    "cache_write_tokens": 0,
+    "cached_tokens": 0
+   },
+   "total_tokens": 43
+  }
+ },
+ "response_headers": {
+  "content-length": "860",
+  "content-security-policy": "frame-ancestors 'none'",
+  "content-type": "application/json",
+  "date": "Mon, 07 Sep 2026 18:07:19 GMT",
+  "llm_provider-content-length": "724",
+  "llm_provider-content-type": "application/json",
+  "llm_provider-date": "Mon, 07 Sep 2026 18:07:19 GMT",
+  "llm_provider-server": "uvicorn",
+  "referrer-policy": "strict-origin-when-cross-origin",
+  "server": "uvicorn",
+  "strict-transport-security": "max-age=31536000",
+  "via": "1.1 Caddy",
+  "x-content-type-options": "nosniff, nosniff",
+  "x-frame-options": "DENY",
+  "x-litellm-applied-guardrails": "gateway-credential-protection",
+  "x-litellm-applied-policies": "gateway-baseline",
+  "x-litellm-attempted-fallbacks": "0",
+  "x-litellm-attempted-retries": "0",
+  "x-litellm-call-id": "924294e0-913c-4081-9088-7f15f0efa773",
+  "x-litellm-callback-duration-ms": "0.0",
+  "x-litellm-key-max-budget": "123123.0",
+  "x-litellm-key-rpm-limit": "123123",
+  "x-litellm-key-spend": "0.0002471528",
+  "x-litellm-key-tpm-limit": "123123",
+  "x-litellm-model-api-base": "http://opencode-adapter:8000/v1",
+  "x-litellm-model-group": "nemotron-3-ultra-free",
+  "x-litellm-model-id": "<redacted>",
+  "x-litellm-overhead-duration-ms": "5.344",
+  "x-litellm-policy-sources": "gateway-baseline=scope:*",
+  "x-litellm-response-cost": "5.55e-05",
+  "x-litellm-response-cost-discount-amount": "0.0",
+  "x-litellm-response-cost-margin-amount": "0.0",
+  "x-litellm-response-cost-margin-percent": "0.0",
+  "x-litellm-response-cost-original": "5.55e-05",
+  "x-litellm-response-duration-ms": "48267.191",
+  "x-litellm-version": "1.93.0",
+  "x-ratelimit-api_key-limit-max_parallel_requests": "2",
+  "x-ratelimit-api_key-limit-requests": "123123",
+  "x-ratelimit-api_key-limit-tokens": "123123",
+  "x-ratelimit-api_key-remaining-max_parallel_requests": "1",
+  "x-ratelimit-api_key-remaining-requests": "123122",
+  "x-ratelimit-api_key-remaining-tokens": "123100",
+  "x-ratelimit-team-limit-requests": "50000",
+  "x-ratelimit-team-limit-tokens": "500000",
+  "x-ratelimit-team-remaining-requests": "49999",
+  "x-ratelimit-team-remaining-tokens": "499977"
+ }
+}

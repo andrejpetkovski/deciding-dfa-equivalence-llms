@@ -1,0 +1,418 @@
+{
+  "status": "Exploratory post-review analysis; frozen primary model unchanged",
+  "input_sha256": "a1f8cc6d780035e71ea408a0396b84864b3d74359141e0a71e93160b5f48bb5a",
+  "per_model": {
+    "deepseek/deepseek-v4-flash-0731": {
+      "const": {
+        "name": "const",
+        "value": 3.361906967424741,
+        "ci_low": 2.5161664523355958,
+        "ci_high": 4.207647482513886,
+        "p_value": 6.644842904222996e-15,
+        "method": "gee_exchangeable_pair_clustered",
+        "note": null
+      },
+      "depth": {
+        "name": "depth",
+        "value": -0.1376190125027084,
+        "ci_low": -0.27505560894353764,
+        "ci_high": -0.00018241606187915926,
+        "p_value": 0.049696695068472754,
+        "method": "gee_exchangeable_pair_clustered",
+        "note": null
+      },
+      "prompt": {
+        "name": "prompt",
+        "value": -0.8710967013467185,
+        "ci_low": -2.036241106792027,
+        "ci_high": 0.2940477040985904,
+        "p_value": 0.1428315817713887,
+        "method": "gee_exchangeable_pair_clustered",
+        "note": null
+      },
+      "rendering[R1]": {
+        "name": "rendering[R1]",
+        "value": -0.12449123200929392,
+        "ci_low": -1.1951222585678594,
+        "ci_high": 0.9461397945492716,
+        "p_value": 0.8197228788576296,
+        "method": "gee_exchangeable_pair_clustered",
+        "note": null
+      },
+      "depth:prompt": {
+        "name": "depth:prompt",
+        "value": 0.15227112238180254,
+        "ci_low": -0.13848892468168336,
+        "ci_high": 0.4430311694452884,
+        "p_value": 0.30468719210749096,
+        "method": "gee_exchangeable_pair_clustered",
+        "note": null
+      }
+    },
+    "xiaomi/mimo-v2.5": {
+      "const": {
+        "name": "const",
+        "value": 1.652555174618959,
+        "ci_low": 1.2773599907784243,
+        "ci_high": 2.027750358459494,
+        "p_value": 5.991882316777307e-18,
+        "method": "gee_exchangeable_pair_clustered",
+        "note": null
+      },
+      "depth": {
+        "name": "depth",
+        "value": -0.23574890344115235,
+        "ci_low": -0.3027929764037444,
+        "ci_high": -0.16870483047856027,
+        "p_value": 5.506180717184555e-12,
+        "method": "gee_exchangeable_pair_clustered",
+        "note": null
+      },
+      "prompt": {
+        "name": "prompt",
+        "value": -0.4220361679522668,
+        "ci_low": -1.0199124786225842,
+        "ci_high": 0.17584014271805065,
+        "p_value": 0.16650452800665438,
+        "method": "gee_exchangeable_pair_clustered",
+        "note": null
+      },
+      "rendering[R1]": {
+        "name": "rendering[R1]",
+        "value": -0.17511847903847536,
+        "ci_low": -0.6556574222273787,
+        "ci_high": 0.3054204641504279,
+        "p_value": 0.4750713537591357,
+        "method": "gee_exchangeable_pair_clustered",
+        "note": null
+      },
+      "depth:prompt": {
+        "name": "depth:prompt",
+        "value": -0.021556377426218763,
+        "ci_low": -0.1735220652850123,
+        "ci_high": 0.13040931043257475,
+        "p_value": 0.7809958802590524,
+        "method": "gee_exchangeable_pair_clustered",
+        "note": null
+      }
+    },
+    "z-ai/glm-5.3-flash": {
+      "const": {
+        "name": "const",
+        "value": 2.4365400044492134,
+        "ci_low": 1.9435399904075799,
+        "ci_high": 2.929540018490847,
+        "p_value": 3.4353229291365595e-22,
+        "method": "gee_exchangeable_pair_clustered",
+        "note": null
+      },
+      "depth": {
+        "name": "depth",
+        "value": -0.1374210399451451,
+        "ci_low": -0.2359488712216944,
+        "ci_high": -0.038893208668595816,
+        "p_value": 0.006263719791983679,
+        "method": "gee_exchangeable_pair_clustered",
+        "note": null
+      },
+      "prompt": {
+        "name": "prompt",
+        "value": -0.5371446616361312,
+        "ci_low": -1.2142324423567872,
+        "ci_high": 0.13994311908452484,
+        "p_value": 0.11997678244059297,
+        "method": "gee_exchangeable_pair_clustered",
+        "note": null
+      },
+      "rendering[R1]": {
+        "name": "rendering[R1]",
+        "value": -0.47277403089056846,
+        "ci_low": -1.124181041973137,
+        "ci_high": 0.17863298019200013,
+        "p_value": 0.15488400164301497,
+        "method": "gee_exchangeable_pair_clustered",
+        "note": null
+      },
+      "depth:prompt": {
+        "name": "depth:prompt",
+        "value": -0.033271311775854226,
+        "ci_low": -0.1985698225737667,
+        "ci_high": 0.13202719902205823,
+        "p_value": 0.6932105415870708,
+        "method": "gee_exchangeable_pair_clustered",
+        "note": null
+      }
+    }
+  },
+  "bin_rates": [
+    {
+      "model": "deepseek/deepseek-v4-flash-0731",
+      "prompt": "P0",
+      "bin": "1-2",
+      "calls": 50,
+      "successes": 50
+    },
+    {
+      "model": "deepseek/deepseek-v4-flash-0731",
+      "prompt": "P0",
+      "bin": "3-4",
+      "calls": 50,
+      "successes": 48
+    },
+    {
+      "model": "deepseek/deepseek-v4-flash-0731",
+      "prompt": "P0",
+      "bin": "5-8",
+      "calls": 50,
+      "successes": 50
+    },
+    {
+      "model": "deepseek/deepseek-v4-flash-0731",
+      "prompt": "P0",
+      "bin": "9-12",
+      "calls": 50,
+      "successes": 46
+    },
+    {
+      "model": "deepseek/deepseek-v4-flash-0731",
+      "prompt": "P1",
+      "bin": "1-2",
+      "calls": 50,
+      "successes": 50
+    },
+    {
+      "model": "deepseek/deepseek-v4-flash-0731",
+      "prompt": "P1",
+      "bin": "3-4",
+      "calls": 50,
+      "successes": 45
+    },
+    {
+      "model": "deepseek/deepseek-v4-flash-0731",
+      "prompt": "P1",
+      "bin": "5-8",
+      "calls": 50,
+      "successes": 48
+    },
+    {
+      "model": "deepseek/deepseek-v4-flash-0731",
+      "prompt": "P1",
+      "bin": "9-12",
+      "calls": 50,
+      "successes": 46
+    },
+    {
+      "model": "xiaomi/mimo-v2.5",
+      "prompt": "P0",
+      "bin": "1-2",
+      "calls": 50,
+      "successes": 47
+    },
+    {
+      "model": "xiaomi/mimo-v2.5",
+      "prompt": "P0",
+      "bin": "3-4",
+      "calls": 50,
+      "successes": 46
+    },
+    {
+      "model": "xiaomi/mimo-v2.5",
+      "prompt": "P0",
+      "bin": "5-8",
+      "calls": 50,
+      "successes": 38
+    },
+    {
+      "model": "xiaomi/mimo-v2.5",
+      "prompt": "P0",
+      "bin": "9-12",
+      "calls": 50,
+      "successes": 35
+    },
+    {
+      "model": "xiaomi/mimo-v2.5",
+      "prompt": "P1",
+      "bin": "1-2",
+      "calls": 50,
+      "successes": 48
+    },
+    {
+      "model": "xiaomi/mimo-v2.5",
+      "prompt": "P1",
+      "bin": "3-4",
+      "calls": 50,
+      "successes": 41
+    },
+    {
+      "model": "xiaomi/mimo-v2.5",
+      "prompt": "P1",
+      "bin": "5-8",
+      "calls": 50,
+      "successes": 34
+    },
+    {
+      "model": "xiaomi/mimo-v2.5",
+      "prompt": "P1",
+      "bin": "9-12",
+      "calls": 50,
+      "successes": 30
+    },
+    {
+      "model": "z-ai/glm-5.3-flash",
+      "prompt": "P0",
+      "bin": "1-2",
+      "calls": 50,
+      "successes": 47
+    },
+    {
+      "model": "z-ai/glm-5.3-flash",
+      "prompt": "P0",
+      "bin": "3-4",
+      "calls": 50,
+      "successes": 46
+    },
+    {
+      "model": "z-ai/glm-5.3-flash",
+      "prompt": "P0",
+      "bin": "5-8",
+      "calls": 50,
+      "successes": 48
+    },
+    {
+      "model": "z-ai/glm-5.3-flash",
+      "prompt": "P0",
+      "bin": "9-12",
+      "calls": 50,
+      "successes": 42
+    },
+    {
+      "model": "z-ai/glm-5.3-flash",
+      "prompt": "P1",
+      "bin": "1-2",
+      "calls": 50,
+      "successes": 49
+    },
+    {
+      "model": "z-ai/glm-5.3-flash",
+      "prompt": "P1",
+      "bin": "3-4",
+      "calls": 50,
+      "successes": 44
+    },
+    {
+      "model": "z-ai/glm-5.3-flash",
+      "prompt": "P1",
+      "bin": "5-8",
+      "calls": 50,
+      "successes": 36
+    },
+    {
+      "model": "z-ai/glm-5.3-flash",
+      "prompt": "P1",
+      "bin": "9-12",
+      "calls": 50,
+      "successes": 43
+    }
+  ],
+  "categorical_pooled": {
+    "const": {
+      "name": "const",
+      "value": 4.894211025680823,
+      "ci_low": 4.072832804989046,
+      "ci_high": 5.7155892463726,
+      "p_value": 1.6413920541528624e-31,
+      "method": "gee_exchangeable_pair_clustered",
+      "note": null
+    },
+    "prompt": {
+      "name": "prompt",
+      "value": 0.7250170033171695,
+      "ci_low": -0.8840219801828864,
+      "ci_high": 2.3340559868172255,
+      "p_value": 0.37716045770486606,
+      "method": "gee_exchangeable_pair_clustered",
+      "note": null
+    },
+    "rendering[R1]": {
+      "name": "rendering[R1]",
+      "value": -0.2657297154132551,
+      "ci_low": -0.6482190065765161,
+      "ci_high": 0.11675957575000595,
+      "p_value": 0.1733049597145122,
+      "method": "gee_exchangeable_pair_clustered",
+      "note": null
+    },
+    "model[xiaomi/mimo-v2.5]": {
+      "name": "model[xiaomi/mimo-v2.5]",
+      "value": -1.829551701386118,
+      "ci_low": -2.392036475132478,
+      "ci_high": -1.2670669276397581,
+      "p_value": 1.8293109710914947e-10,
+      "method": "gee_exchangeable_pair_clustered",
+      "note": null
+    },
+    "model[z-ai/glm-5.3-flash]": {
+      "name": "model[z-ai/glm-5.3-flash]",
+      "value": -1.0851777695389941,
+      "ci_low": -1.6800862983894476,
+      "ci_high": -0.4902692406885407,
+      "p_value": 0.0003499774151142065,
+      "method": "gee_exchangeable_pair_clustered",
+      "note": null
+    },
+    "bin[3-4]": {
+      "name": "bin[3-4]",
+      "value": -1.3301715825400295,
+      "ci_low": -2.1326800826701966,
+      "ci_high": -0.5276630824098627,
+      "p_value": 0.0011594432588647161,
+      "method": "gee_exchangeable_pair_clustered",
+      "note": null
+    },
+    "bin[3-4]:prompt": {
+      "name": "bin[3-4]:prompt",
+      "value": -1.5196250230253159,
+      "ci_low": -3.3026338623107705,
+      "ci_high": 0.26338381626013874,
+      "p_value": 0.0948322270008242,
+      "method": "gee_exchangeable_pair_clustered",
+      "note": null
+    },
+    "bin[5-8]": {
+      "name": "bin[5-8]",
+      "value": -1.80226205691835,
+      "ci_low": -2.57782223014425,
+      "ci_high": -1.02670188369245,
+      "p_value": 5.248459394611505e-06,
+      "method": "gee_exchangeable_pair_clustered",
+      "note": null
+    },
+    "bin[5-8]:prompt": {
+      "name": "bin[5-8]:prompt",
+      "value": -1.7531291680471859,
+      "ci_low": -3.5150665381161494,
+      "ci_high": 0.008808202021777678,
+      "p_value": 0.05115635868757103,
+      "method": "gee_exchangeable_pair_clustered",
+      "note": null
+    },
+    "bin[9-12]": {
+      "name": "bin[9-12]",
+      "value": -2.1879102520220957,
+      "ci_low": -2.9057494952880316,
+      "ci_high": -1.4700710087561597,
+      "p_value": 2.317954378031896e-09,
+      "method": "gee_exchangeable_pair_clustered",
+      "note": null
+    },
+    "bin[9-12]:prompt": {
+      "name": "bin[9-12]:prompt",
+      "value": -0.9092275789436712,
+      "ci_low": -2.609509090891626,
+      "ci_high": 0.7910539330042832,
+      "p_value": 0.29459571834163345,
+      "method": "gee_exchangeable_pair_clustered",
+      "note": null
+    }
+  }
+}

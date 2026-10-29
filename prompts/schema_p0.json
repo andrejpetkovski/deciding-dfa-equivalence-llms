@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "P0_direct strict response contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "equivalent",
+    "witness"
+  ],
+  "properties": {
+    "equivalent": {
+      "type": "boolean"
+    },
+    "witness": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[01]*$"
+    }
+  },
+  "$comment": "Strict parse (Protocol section 8.5): any extra key, missing key, wrong type, surrounding prose or code fence, or a witness symbol outside the alphabet is a PARSE FAILURE and counts as incorrect. Semantic cross-field rules are enforced by the grader, not the schema: equivalent=true requires witness=null, and equivalent=false requires a string witness."
+}

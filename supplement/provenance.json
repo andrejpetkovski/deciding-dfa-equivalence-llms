@@ -1,0 +1,29 @@
+{
+  "freeze_tag": "freeze-main-v2",
+  "tagged_commit": "134e4c969611505b199bdf95747aa968d6b39a50",
+  "tagged_commit_timestamp": "2026-09-09T20:18:36+02:00",
+  "initial_freeze_commit": "17fc5d5ad4a2cb6639f97848e714dc67c35f0c86",
+  "initial_commit_timestamp": "2026-09-09T20:14:32+02:00",
+  "request_windows": {
+    "primary": {
+      "first_request_start_utc": "2026-09-09T19:15:21Z",
+      "last_request_start_utc": "2026-09-10T13:09:44Z",
+      "attempts": 2409
+    },
+    "audit_repeats": {
+      "first_request_start_utc": "2026-09-10T10:19:21Z",
+      "last_request_start_utc": "2026-09-10T13:10:30Z",
+      "attempts": 1031
+    }
+  },
+  "prompt_sha256_lf": {
+    "prompts/system_v1.txt": "9c22a96e3938b9d4e9e1fb02681d0adb7c56d88e1e6657aac7d1af08ea48bc19",
+    "prompts/p0_direct_v1.txt": "c32ebb8c9a3058bcb78e58640799810cb3329379a297e4b7a378abb15e5e6e85",
+    "prompts/p1_trace_v1.txt": "d95cd51076fccb33594791c82fddd9fa2b7fc0ffce0d288cc146a5304e3dea60",
+    "prompts/schema_p0.json": "88412a5871c782e94377cf07f44184d1ee2fde6eca1e546cd4a9043e616ab5c0",
+    "prompts/schema_p1.json": "9c1c73812adf234e1499c5b70a171900cc69dc465991d42c303b432fb605ff87"
+  },
+  "assembled_prompt_count": 800,
+  "tagged_config_sha256": "590999691abc99351618b2ba3f6263bad1300b400517dd006d441c2eb1221803",
+  "raw_log_sha256": "117c8afd79601f1c00c84d601b67ea40883c439e81687ab3894c90b431085c37"
+}

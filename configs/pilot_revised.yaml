@@ -1,0 +1,253 @@
+# REVISED V2 TEMPLATE — NOT FROZEN, NOT READY FOR GENERATION OR INFERENCE.
+# docs/experiment_revision.md is the implementation contract. The M3R generator and
+# version guard exist; retained study data and M5R/M6R enforcement remain pending.
+# Finish these gates and M7–M9 before experimental pilot calls; seed remains unset.
+# Portal URL is known; API URL, model IDs/revisions, and controls remain unverified.
+# Candidate aliases are screenshot labels, NOT verified request IDs.
+# Do not replace inaccessible evidence with guesses. Record explicit limitations
+# at freeze; no model calls are authorized by these configuration templates.
+# Revised pilot: 24 pairs x 2 R x 2 P x 2 models = 192 calls (D5.5, two-model design).
+config_id: pilot_v2
+status: TEMPLATE
+study_title: Do LLMs Understand DFA Equivalence?
+protocol_version: v2-amendments-2026-09-07
+frozen_commit: FILL_AT_FREEZE
+frozen_at_utc: FILL_AT_FREEZE
+# Revised pilot seed, set 2026-09-07 (D2). Public by design: only the MAIN seed is held
+# private until inference (§13 contamination safeguard). Recorded in docs/freeze_log.md.
+seed: 20260908
+alphabet:
+- '0'
+- '1'
+pairs:
+  total: 24
+  neq_depth:
+    count: 12
+    state_count: 14
+    bins:
+      1-2: 3
+      3-4: 3
+      5-8: 3
+      9-12: 3
+    exclude_depth_zero: true
+    forbid_epsilon_cue: true
+  eq_iso:
+    count: 6
+    state_count: 14
+  eq_expand:
+    count: 6
+    state_count: 14
+    core_states:
+    - 10
+    - 12
+    require_non_isomorphic: true
+  max_generation_attempts_per_pair: 20000
+  exclude_hashes_from: data/pairs/pilot_v2/exclusion_hashes_from_legacy.txt
+  # Datasets the exclusion list above must cover. Gate 7 recomputes each source's
+  # hashes and verifies every one is present: a file that merely exists proves
+  # nothing about its contents, and a stale list excludes nothing that matters.
+  exclusion_sources:
+  - data/pairs/pilot/pairs.jsonl        # legacy v1 pilot
+  construction_version: acceptance_swap_v2
+  accepting_count_per_dfa: 7
+representations:
+- id: R0
+  name: R0_sequential
+  labels: stored_order_sequential
+  row_order: initial_then_lexical
+- id: R1
+  name: R1_nonce_shuffled
+  # Changed 2026-09-08 (D5.4). Was nonce_cvc; measurement showed R1/R0 token ratios of
+  # 0.709-0.783 against a +-10% gate, because a CVC nonce costs ~1 token and q06 ~2.6, times
+  # 128 label occurrences per prompt. R1 now reuses R0's own vocabulary under a random
+  # derangement, so the two renderings carry an identical multiset of label strings and the
+  # token balance holds BY CONSTRUCTION. Only the assignment and the row order differ.
+  labels: shared_vocabulary_deranged
+  row_order: uniform_shuffle
+  shuffle_accepting_list: true
+prompts:
+  system: prompts/system_v1.txt
+  system_placement: system_role
+  system_sha256: FILL_AT_FREEZE
+  conditions:
+  - id: P0
+    name: P0_direct
+    template: prompts/p0_direct_v1.txt
+    template_sha256: FILL_AT_FREEZE
+    schema: prompts/schema_p0.json
+  - id: P1
+    name: P1_trace
+    template: prompts/p1_trace_v1.txt
+    template_sha256: FILL_AT_FREEZE
+    schema: prompts/schema_p1.json
+# Slot C was DeepSeek-V4-Flash; it is blocked and will not be enabled. Replaced by an
+# official Qwen release on 2026-09-08 (D5 resolution in docs/freeze_log.md), which restores
+# three distinct developers. `id` is filled only where a probe returned HTTP 200 for that
+# exact string; a dashboard label is not a verified request id.
+models:
+- id: mimo-v2.5-free
+  candidate_alias: mimo-v2.5-free
+  family: Xiaomi MiMo
+  preferred_release: MiMo-V2.5
+  identity_status: CALLABLE_UPSTREAM_RELEASE_UNVERIFIED
+  deployment_id: 4d6f9149efd89698946acc148cd91f820418db5c3461bab328b94dc8ef2ca4b5
+  gateway_route: openai/mimo-v2.5-free
+  serving_backend: opencode-adapter
+  answer_adapter: openai_chat_content_v1
+  revision: FILL_AT_FREEZE
+  role: strong_reasoning_candidate
+  reasoning_policy: FILL_AT_FREEZE
+  effective_decoding: FILL_AT_FREEZE
+  tokenizer_evidence: FILL_AT_FREEZE
+# Slot C. Routed through ollama_chat/, a DIFFERENT serving stack from the other two, so
+# neither the answer-channel shape nor the quantization can be assumed from them. `id` stays
+# unfilled until a probe confirms this exact request string, and answer_adapter stays unset
+# until the calibration probe reports the channel shape.
+- id: qwen3.8-27b
+  candidate_alias: qwen3.8-27b
+  family: Qwen (Alibaba)
+  preferred_release: Qwen3.8 27B
+  # Callable (HTTP 200, 2026-09-08). Accepted by the user on 2026-09-08 (D5.2): the
+  # exclusion names vezilka-* model ADAPTATIONS and this is not one. The evidence gap is a
+  # stated paper limitation, not an open task -- /model/info is 403 and an Ollama tag proves
+  # nothing, so upstream weights and quantization are unverifiable here. Slots A and B are in
+  # the same position via opencode-adapter.
+  identity_status: ACCEPTED_UPSTREAM_WEIGHTS_UNVERIFIABLE_D5_2
+  deployment_id: 79d95dfd610a1a16c02d89f0263fe8dab8a7a46d6583f49237d102cea8a78c9d
+  gateway_route: ollama_chat/qwen3.8-27b
+  serving_backend: ollama
+  upstream_api_base: https://ollama.loom.vezilka.ai
+  answer_adapter: openai_chat_content_v1
+  quantization: UNKNOWN_OLLAMA_DEFAULTS_TO_QUANTIZED
+  revision: FILL_AT_FREEZE
+  role: strong_reasoning_candidate
+  reasoning_policy: FILL_AT_FREEZE
+  effective_decoding: FILL_AT_FREEZE
+  tokenizer_evidence: FILL_AT_FREEZE
+serving:
+  management: university_gateway
+  direct_hosting_required: false
+  infrastructure_evidence: FILL_AT_FREEZE
+  post_template_hash_policy: record_only_if_verifiable_else_null_with_reason
+# Frozen 2026-09-08 from calibration evidence, not from preference. One policy, applied
+# identically to every model and every R/P condition (§8.4).
+decoding:
+  policy: per_model_verified_and_frozen
+  preferred_mode: deterministic_where_suitable_and_supported
+  # Accepted by all three models. MEASURED NOT EFFECTIVE for mimo-v2.5-free, which returned
+  # the same answer three times using 452 / 1,222 / 2,414 completion tokens -- it samples.
+  # Sent anyway because it is the most deterministic setting the gateway supports, and
+  # recorded as requested-but-not-effective rather than assumed to work.
+  temperature: 0
+  # Never verified to be accepted, let alone honoured. Omitted rather than sent: asserting a
+  # control the gateway may reject is not the same experiment as not sending one.
+  seed: null
+  top_p: null
+  # MEASURED 2026-09-08: max_tokens is accepted but NOT effective for nemotron-3-ultra-free
+  # (5/5 responses exceeded it) or mimo-v2.5-free (11/14, worst overrun 6,085 tokens).
+  # PROVEN effective only for qwen3.8-27b (12/15 responses stopped exactly at the cap).
+  # So this value binds one model of three: it cannot bound output length in general and
+  # cannot be used to project cost. Set to 2x the largest untruncated completion observed
+  # across all calibration (mimo, 6,086), rounded up -- roughly 11x qwen's observed maximum
+  # of 1,089, so it should never truncate the one model it actually constrains.
+  max_output_tokens: 12288
+  guided_json: false
+  final_answer_policy: openai_chat_content_v1
+samples:
+  main: 1
+  repeatability:
+    enabled: false
+    fraction: 0.2
+    stratified_by:
+    - family
+    - depth_bin
+    extra_samples: 2
+    selection_seed: FILL_AT_FREEZE
+    mode: operational_repeatability_audit
+execution:
+  randomize_call_order: true
+  order_seed: 20260908   # nuisance parameter; fixed and recorded (D5 entry)
+  max_concurrent_requests: 2   # gateway per-key limit, measured 2026-09-07
+  # Lowered 5 -> 2 on 2026-09-08. The observed 504s from the opencode-adapter upstream
+  # arrive in sustained storms, not transient blips: every failed cell in calibration
+  # exhausted all five attempts, so attempts 3-5 were reliably wasted at ~50s each.
+  # Two attempts still cover a genuine one-off; the runner resumes for the rest.
+  max_transport_attempts: 2
+  backoff:
+    initial_seconds: 2
+    multiplier: 2.0
+    max_seconds: 60
+  request_timeout_seconds: 900
+  raw_log: data/raw/pilot_v2_responses.jsonl
+  # Approved by the repo owner 2026-09-08 for the revised pilot; recorded in
+  # docs/budget.md and docs/freeze_log.md.
+  approval_status: APPROVED
+  require_verified_v2_artifacts: true
+grading:
+  strict_parse_is_primary: true
+  strict_parse_failures_count_as_wrong: true
+  forgiving_parser_as_sensitivity: true
+  valid_non_shortest_is_success: true
+exclusions:
+  transport_failure_after_max_attempts: count_as_end_to_end_failure_and_report_separately
+  truncated_by_max_tokens: grade_retained_final_answer_and_report_truncation
+  empty_response: report_as_parse_failure
+qa:
+  token_balance_tolerance: 0.1
+  cross_check_libraries:
+  - pyformlang
+  - automata-lib
+  tokenizer_for_token_balance: FILL_AT_FREEZE
+  require_all_states_reachable: true
+  token_balance_scope: full_model_input_per_model_and_prompt_condition
+  require_prompt_artifact_integrity: true
+analysis:
+  cluster_key: pair_id
+  primary_hypothesis: H1
+  secondary_hypotheses:
+  - H2
+  - H3
+  h1_model: logit P(witness_success) ~ d + prompt_centered + representation + model
+    + d:prompt_centered, RE(pair_id)
+  h1_restricted_to: NEQ_DEPTH
+  bootstrap_resamples: 10000
+  multiplicity_correction: holm
+  primary_metric: end_to_end_witness_success
+  h1_prompt_coding:
+    P0: -0.5
+    P1: 0.5
+  h1_outcome: end_to_end_witness_success
+  secondary_decision_metric: balanced_decision_accuracy
+  primary_sample_index: 0
+  h2_contrast_specification: FILL_AT_FREEZE
+  secondary_test_family: FILL_AT_FREEZE
+  baselines:
+  - exact_oracle
+  - always_equivalent
+  - always_non_equivalent
+  - accepting_count_difference_one
+  shortestness_role: descriptive
+  flip_denominator: both_strict_valid_boolean_decisions_report_coverage
+  orbit_denominator: all_scheduled_representation_pairs
+paths:
+  pairs_dir: data/pairs/pilot_v2
+  renderings_dir: data/renderings/pilot_v2
+  parsed_dir: data/parsed/pilot_v2
+  tables_dir: analysis/tables/pilot_v2
+  figures_dir: analysis/figures/pilot_v2
+implementation_status: M3R_CODE_PRESENT_PILOT_ARTIFACTS_AND_M5R_M6R_M7_M8_M9_PENDING
+model_selection:
+  policy: official_developer_releases_strong_current
+  exclude_prefixes:
+  - vezilka-
+  alternative_if_access_confirmed: official_qwen_release_TAKEN_2026_09_08
+  select_by_dfa_pilot_rank: false
+gateway:
+  portal_url: https://vllm.finki.ukim.mk/
+  api_base_url: FILL_AT_FREEZE
+  api_base_url_env: FINKI_API_BASE_URL
+  api_key_env: FINKI_API_KEY
+  api_protocol: FILL_AT_FREEZE
+  chat_path: FILL_AT_FREEZE
+  capability_evidence: FILL_AT_FREEZE
+  routing_policy: FILL_AT_FREEZE

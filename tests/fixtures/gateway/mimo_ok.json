@@ -1,0 +1,96 @@
+{
+ "status": 200,
+ "body": {
+  "choices": [
+   {
+    "finish_reason": "stop",
+    "index": 0,
+    "message": {
+     "content": "ok",
+     "provider_specific_fields": {
+      "reasoning": "The user has asked me to reply with the single word \"ok\". This is a simple, harmless request. I should comply with it directly.",
+      "reasoning_details": [
+       {
+        "format": "unknown",
+        "index": 0,
+        "text": "The user has asked me to reply with the single word \"ok\". This is a simple, harmless request. I should comply with it directly.",
+        "type": "reasoning.text"
+       }
+      ],
+      "refusal": null
+     },
+     "reasoning_content": "The user has asked me to reply with the single word \"ok\". This is a simple, harmless request. I should comply with it directly.",
+     "role": "assistant"
+    },
+    "provider_specific_fields": {}
+   }
+  ],
+  "cost": "0",
+  "created": 1788804488,
+  "id": "gen-1788804488-zeJzr9VrkwHWsIGqAJwu",
+  "model": "mimo-v2.5-free",
+  "object": "chat.completion",
+  "usage": {
+   "completion_tokens": 33,
+   "completion_tokens_details": {
+    "audio_tokens": 0,
+    "reasoning_tokens": 0
+   },
+   "prompt_tokens": 254,
+   "prompt_tokens_details": {
+    "audio_tokens": 0,
+    "cache_write_tokens": 0,
+    "cached_tokens": 192
+   },
+   "total_tokens": 287
+  }
+ },
+ "response_headers": {
+  "content-length": "1033",
+  "content-security-policy": "frame-ancestors 'none'",
+  "content-type": "application/json",
+  "date": "Mon, 07 Sep 2026 18:08:08 GMT",
+  "llm_provider-content-length": "838",
+  "llm_provider-content-type": "application/json",
+  "llm_provider-date": "Mon, 07 Sep 2026 18:08:07 GMT",
+  "llm_provider-server": "uvicorn",
+  "referrer-policy": "strict-origin-when-cross-origin",
+  "server": "uvicorn",
+  "strict-transport-security": "max-age=31536000",
+  "via": "1.1 Caddy",
+  "x-content-type-options": "nosniff, nosniff",
+  "x-frame-options": "DENY",
+  "x-litellm-applied-guardrails": "gateway-credential-protection",
+  "x-litellm-applied-policies": "gateway-baseline",
+  "x-litellm-attempted-fallbacks": "0",
+  "x-litellm-attempted-retries": "0",
+  "x-litellm-call-id": "cfa3963e-6b58-4e65-aa0e-874a82b5a7d8",
+  "x-litellm-callback-duration-ms": "0.0",
+  "x-litellm-key-max-budget": "123123.0",
+  "x-litellm-key-rpm-limit": "123123",
+  "x-litellm-key-spend": "0.0002656104",
+  "x-litellm-key-tpm-limit": "123123",
+  "x-litellm-model-api-base": "http://opencode-adapter:8000/v1",
+  "x-litellm-model-group": "mimo-v2.5-free",
+  "x-litellm-model-id": "<redacted>",
+  "x-litellm-overhead-duration-ms": "6.894",
+  "x-litellm-policy-sources": "gateway-baseline=scope:*",
+  "x-litellm-response-cost": "1.84576e-05",
+  "x-litellm-response-cost-discount-amount": "0.0",
+  "x-litellm-response-cost-margin-amount": "0.0",
+  "x-litellm-response-cost-margin-percent": "0.0",
+  "x-litellm-response-cost-original": "1.84576e-05",
+  "x-litellm-response-duration-ms": "4361.91",
+  "x-litellm-version": "1.93.0",
+  "x-ratelimit-api_key-limit-max_parallel_requests": "2",
+  "x-ratelimit-api_key-limit-requests": "123123",
+  "x-ratelimit-api_key-limit-tokens": "123123",
+  "x-ratelimit-api_key-remaining-max_parallel_requests": "1",
+  "x-ratelimit-api_key-remaining-requests": "123121",
+  "x-ratelimit-api_key-remaining-tokens": "123057",
+  "x-ratelimit-team-limit-requests": "50000",
+  "x-ratelimit-team-limit-tokens": "500000",
+  "x-ratelimit-team-remaining-requests": "49998",
+  "x-ratelimit-team-remaining-tokens": "499934"
+ }
+}

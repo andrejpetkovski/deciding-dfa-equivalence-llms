@@ -1,0 +1,14 @@
+Determine whether DFA A and DFA B recognize the same language.
+For a non-equivalent answer, also return the complete state sequence in each DFA
+while reading the witness. Each trace must include the initial state and therefore
+have length |witness| + 1.
+
+{DFA_A_RENDERING}
+
+{DFA_B_RENDERING}
+
+Return exactly:
+{"equivalent": true|false,
+ "witness": string|null,
+ "trace_A": [string,...]|null,
+ "trace_B": [string,...]|null}

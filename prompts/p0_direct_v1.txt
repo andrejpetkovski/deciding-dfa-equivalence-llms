@@ -1,0 +1,8 @@
+Determine whether DFA A and DFA B recognize the same language.
+
+{DFA_A_RENDERING}
+
+{DFA_B_RENDERING}
+
+Return exactly:
+{"equivalent": true|false, "witness": string|null}

@@ -1,0 +1,47 @@
+{
+  "h2": {
+    "ci_high_pp": -1.301827576451718,
+    "ci_low_pp": -8.491142829841149,
+    "estimable": true,
+    "method": "model-based AME from the frozen H1 specification incl. depth x prompt, averaged over 1200 eligible cells; pair-clustered percentile bootstrap, 10000 resamples, seed 20260910",
+    "n_cells": 1200,
+    "n_pairs": 100,
+    "name": "h2_average_marginal_effect",
+    "observed_rates": {
+      "P0": 0.905,
+      "P1": 0.8566666666666667
+    },
+    "odds_ratio": 0.6273930361043298,
+    "p_value": 0.0086,
+    "percentage_points": -4.833574719007997,
+    "resamples_dropped_for_separation": 0,
+    "resamples_used": 10000
+  },
+  "h3": {
+    "both_correct": 983,
+    "discordant": 58,
+    "estimable": true,
+    "method": "exact two-sided McNemar on pooled R0/R1 discordant decisions",
+    "name": "h3_pooled_mcnemar",
+    "neither_correct": 6,
+    "only_r0_correct": 30,
+    "only_r1_correct": 28,
+    "p_value": 0.8956832138895906
+  },
+  "holm": {
+    "adjusted_p": {
+      "h2_average_marginal_effect": 0.0172,
+      "h3_pooled_mcnemar": 0.8956832138895906
+    },
+    "family": [
+      "h2_average_marginal_effect",
+      "h3_pooled_mcnemar"
+    ],
+    "note": "H1 is primary and reported uncorrected; only these two are adjusted.",
+    "raw_p": {
+      "h2_average_marginal_effect": 0.0086,
+      "h3_pooled_mcnemar": 0.8956832138895906
+    }
+  },
+  "note": "Pre-registered H2/H3 secondaries, implemented per configs/main_frozen.yaml. Recorded post-freeze deviation D13. H1 is NOT recomputed here; analysis/make_results.py remains the frozen primary analysis."
+}

@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the paper below."
+type: software
+title: "Deciding DFA Equivalence with LLMs: code, data, and raw model outputs"
+version: "1.0.0"
+date-released: 2026-10-29
+license:
+  - MIT
+  - CC-BY-4.0
+repository-code: "https://github.com/andrejpetkovski/deciding-dfa-equivalence-llms"
+keywords:
+  - deterministic finite automata
+  - language equivalence
+  - large language models
+  - formal reasoning
+  - evaluation
+  - reproducibility
+authors:
+  - family-names: Petkovski
+    given-names: Andrej
+    affiliation: "Faculty of Computer Science and Engineering, Ss. Cyril and Methodius University in Skopje"
+  - family-names: Dimeski
+    given-names: Borjan
+    affiliation: "Faculty of Computer Science and Engineering, Ss. Cyril and Methodius University in Skopje"
+  - family-names: Mihova
+    given-names: Marija
+    affiliation: "Faculty of Computer Science and Engineering, Ss. Cyril and Methodius University in Skopje"
+preferred-citation:
+  type: conference-paper
+  title: "Deciding DFA Equivalence with LLMs: Effects of Witness Depth and Representation"
+  authors:
+    - family-names: Petkovski
+      given-names: Andrej
+    - family-names: Dimeski
+      given-names: Borjan
+    - family-names: Mihova
+      given-names: Marija
+  collection-title: "Proceedings of the Telecommunications Forum (TELFOR 2026)"
+  conference:
+    name: "Telecommunications Forum (TELFOR)"
+    city: Belgrade
+    country: RS
+  year: 2026

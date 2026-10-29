@@ -1,0 +1,306 @@
+# FROZEN 2026-09-09T18:14:44Z — tag `freeze-main-v2`. See docs/freeze_log.md.
+#
+# This file is IMMUTABLE. The generator, prompt text, outcome definitions, exclusion rules
+# and analysis code it names are frozen (rule 2). Editing any of them from here on is a
+# DEVIATION and must be recorded under "Deviations after the freeze" in docs/freeze_log.md
+# — not by quietly changing a value here.
+#
+# The 200 main pairs exist and pass all eight QA gates under --strict. The seeds below
+# regenerate them byte-for-byte, and this repository stays PRIVATE until the main run
+# completes (§13 contamination safeguard): publishing the seeds early would let the dataset
+# be pre-generated.
+#
+# `frozen_commit`/`frozen_at_utc` remain placeholders because a commit cannot contain its
+# own SHA; both are recorded in the freeze record in docs/freeze_log.md.
+#
+# approval_status: APPROVED records the budget approval, and does NOT by itself start a run.
+# src/run_models.py still requires --execute, --approved-attempts and a typed confirmation.
+config_id: main_v2
+status: FROZEN
+study_title: Do LLMs Understand DFA Equivalence?
+protocol_version: v2-amendments-2026-09-07
+frozen_commit: FILL_AT_FREEZE
+frozen_at_utc: FILL_AT_FREEZE
+seed: 1009065073
+alphabet:
+- '0'
+- '1'
+pairs:
+  total: 200
+  neq_depth:
+    count: 100
+    state_count: 14
+    bins:
+      1-2: 25
+      3-4: 25
+      5-8: 25
+      9-12: 25
+    exclude_depth_zero: true
+    forbid_epsilon_cue: true
+  eq_iso:
+    count: 50
+    state_count: 14
+  eq_expand:
+    count: 50
+    state_count: 14
+    core_states:
+    - 10
+    - 12
+    require_non_isomorphic: true
+  max_generation_attempts_per_pair: 20000
+  exclude_hashes_from: data/pairs/pilot_v2/exclusion_hashes.txt
+  # Datasets the exclusion list above must cover. Gate 7 recomputes each source's
+  # hashes and verifies every one is present: a file that merely exists proves
+  # nothing about its contents, and a stale list excludes nothing that matters.
+  exclusion_sources:
+  - data/pairs/pilot/pairs.jsonl        # legacy v1 pilot
+  - data/pairs/pilot_v2/pairs.jsonl     # revised v2 pilot
+  construction_version: acceptance_swap_v2
+  accepting_count_per_dfa: 7
+representations:
+- id: R0
+  name: R0_sequential
+  labels: stored_order_sequential
+  row_order: initial_then_lexical
+- id: R1
+  name: R1_nonce_shuffled
+  # Changed 2026-09-08 (D5.4). Was nonce_cvc; measurement showed R1/R0 token ratios of
+  # 0.709-0.783 against a +-10% gate, because a CVC nonce costs ~1 token and q06 ~2.6, times
+  # 128 label occurrences per prompt. R1 now reuses R0's own vocabulary under a random
+  # derangement, so the two renderings carry an identical multiset of label strings and the
+  # token balance holds BY CONSTRUCTION. Only the assignment and the row order differ.
+  labels: shared_vocabulary_deranged
+  row_order: uniform_shuffle
+  shuffle_accepting_list: true
+prompts:
+  system: prompts/system_v1.txt
+  system_placement: system_role
+  system_sha256: sha256:9c22a96e3938b9d4e9e1fb02681d0adb7c56d88e1e6657aac7d1af08ea48bc19
+  conditions:
+  - id: P0
+    name: P0_direct
+    template: prompts/p0_direct_v1.txt
+    template_sha256: sha256:c32ebb8c9a3058bcb78e58640799810cb3329379a297e4b7a378abb15e5e6e85
+    schema: prompts/schema_p0.json
+  - id: P1
+    name: P1_trace
+    template: prompts/p1_trace_v1.txt
+    template_sha256: sha256:d95cd51076fccb33594791c82fddd9fa2b7fc0ffce0d288cc146a5304e3dea60
+    schema: prompts/schema_p1.json
+models:
+# Three official open-weight releases from three distinct developers. Ids, adapters and
+# provider pins are all probe-verified (D6/D7/D8); `revision` stays open because OpenRouter
+# exposes no immutable per-deployment revision, which is a recorded limitation.
+- id: deepseek/deepseek-v4-flash-0731
+  candidate_alias: deepseek/deepseek-v4-flash-0731
+  family: DeepSeek
+  preferred_release: DeepSeek V4 Flash 0731 (GA)
+  developer: DeepSeek
+  weights_public: true
+  identity_status: CALLABLE_PROVIDER_PINNED_2026_09_09
+  provider_pin: Relace
+  provider_pin_evidence: 'D8 load probe 2026-09-09, 4 concurrent real prompts: Relace
+    4/4 ok at 39.5 tok/s, Sail Research 38.5, DigitalOcean 28.8, OpenInference 22.8,
+    zero 429s anywhere. Moved off DeepInfra, which produced ~91 rate limits during the
+    pilot. Chosen on throughput and observed throttling, never on DFA accuracy.'
+  answer_adapter: openai_chat_content_v1
+  revision: 'UNAVAILABLE: OpenRouter exposes no immutable per-deployment revision. The run records the returned model string, the provider, and the per-response generation id instead; upstream weights and quantization are unverifiable and the paper says so (D5.2).'
+  role: strong_reasoning_candidate
+  reasoning_policy: 'No thinking switch is offered or sent. Reasoning text is retained from message.reasoning/reasoning_content and NEVER graded; the graded channel is message.content verbatim (openai_chat_content_v1).'
+  effective_decoding: 'temperature=0 ACCEPTED BUT NOT EFFECTIVE (measured: identical requests return different generations). seed and top_p unsupported and unsent. max_tokens=12288 IS honoured -- finish_reason=length observed. Repeats are an operational repeatability audit, never a determinism check.'
+  tokenizer_evidence: deepseek-ai/DeepSeek-V4-Flash-0731, validated (+4 constant)
+- id: z-ai/glm-5.3-flash
+  candidate_alias: z-ai/glm-5.3-flash
+  family: Z.ai GLM
+  preferred_release: GLM-5.3-Flash
+  developer: Z.ai (Zhipu)
+  weights_public: true
+  identity_status: CALLABLE_PROVIDER_PINNED_2026_09_09
+  provider_pin: GMICloud
+  provider_pin_evidence: 'D10 re-probe 2026-09-09, n=40 real prompts at the frozen cap:
+    40/40 answered on GMICloud at 113.2 tok/s, zero 200-wrapped errors and zero aborted
+    generations, against 33.6 tok/s on DeepInfra. D9 had held this model on DeepInfra
+    assuming GMICloud was broken; that failure is specific to xiaomi/mimo-v2.5, not to the
+    host, and 40 clean GLM calls falsify the host-level reading. At n=40 a 20% failure rate
+    survives undetected with probability 0.8^40 = 0.013%.'
+  answer_adapter: openai_chat_content_v1
+  revision: 'UNAVAILABLE: OpenRouter exposes no immutable per-deployment revision. The run records the returned model string, the provider, and the per-response generation id instead; upstream weights and quantization are unverifiable and the paper says so (D5.2).'
+  role: strong_reasoning_candidate
+  reasoning_policy: 'No thinking switch is offered or sent. Reasoning text is retained from message.reasoning/reasoning_content and NEVER graded; the graded channel is message.content verbatim (openai_chat_content_v1).'
+  effective_decoding: 'temperature=0 ACCEPTED BUT NOT EFFECTIVE (measured: identical requests return different generations). seed and top_p unsupported and unsent. max_tokens=12288 IS honoured -- finish_reason=length observed. Repeats are an operational repeatability audit, never a determinism check.'
+  tokenizer_evidence: 'Gate 8 uses one local tokenizer for every model (qa.tokenizer_for_token_balance), validated against provider-reported usage.prompt_tokens as observed = local(system)+local(user)+4 exactly. The R1/R0 ratio is a property of the rendered text, not of a model, and after D5.4 both schemes share one fixed-width vocabulary.'
+- id: xiaomi/mimo-v2.5
+  candidate_alias: xiaomi/mimo-v2.5
+  family: Xiaomi MiMo
+  preferred_release: MiMo-V2.5
+  developer: Xiaomi
+  weights_public: true
+  identity_status: CALLABLE_PROVIDER_PINNED_2026_09_09
+  provider_pin: StreamLake
+  provider_pin_evidence: 'D10 re-probe 2026-09-09, n=40 each at the frozen cap. StreamLake
+    38/40 answered at 62.7 tok/s with ZERO infrastructure failures (both misses were
+    finish_reason=length, a legitimate model outcome). GMICloud 32/40, of which 6 were
+    infrastructure failures -- 4 aborted generations and 2 error envelopes, 15% (Fisher
+    exact vs StreamLake p=0.026). GMICloud is faster (85.1 tok/s) and is NOT chosen: its
+    failure rate is also unstable, 40.6% across 96 pilot calls versus 15.0% here
+    (p=0.005), which is not a property to plan a 1,120-call run around. Costs ~1.7 h more
+    and removes the failure class. Reliability, never DFA accuracy, decides this.'
+  answer_adapter: openai_chat_content_v1
+  revision: 'UNAVAILABLE: OpenRouter exposes no immutable per-deployment revision. The run records the returned model string, the provider, and the per-response generation id instead; upstream weights and quantization are unverifiable and the paper says so (D5.2).'
+  role: strong_reasoning_candidate
+  reasoning_policy: 'No thinking switch is offered or sent. Reasoning text is retained from message.reasoning/reasoning_content and NEVER graded; the graded channel is message.content verbatim (openai_chat_content_v1).'
+  effective_decoding: 'temperature=0 ACCEPTED BUT NOT EFFECTIVE (measured: identical requests return different generations). seed and top_p unsupported and unsent. max_tokens=12288 IS honoured -- finish_reason=length observed. Repeats are an operational repeatability audit, never a determinism check.'
+  tokenizer_evidence: 'Gate 8 uses one local tokenizer for every model (qa.tokenizer_for_token_balance), validated against provider-reported usage.prompt_tokens as observed = local(system)+local(user)+4 exactly. The R1/R0 ratio is a property of the rendered text, not of a model, and after D5.4 both schemes share one fixed-width vocabulary.'
+serving:
+  management: openrouter
+  direct_hosting_required: false
+  infrastructure_evidence: 'docs/freeze_log.md D6-D10 and docs/provider_reprobe_20260909.json. One provider pinned per model with allow_fallbacks:false; every response records provider, returned model and generation id. No hosting, weight access or GPU provisioning is claimed.'
+  post_template_hash_policy: record_only_if_verifiable_else_null_with_reason
+decoding:
+  policy: per_model_verified_and_frozen
+  preferred_mode: deterministic_where_suitable_and_supported
+  # temperature=0 is ACCEPTED BUT NOT EFFECTIVE on all three models (measured: identical
+  # requests return different generations). The repeats are an operational repeatability
+  # audit, never a determinism check. seed/top_p are null because the providers ignore them.
+  temperature: 0
+  seed: null
+  top_p: null
+  # Frozen 2026-09-09 from calibration; the pilot truncated 9/235 (4%) at this cap.
+  max_output_tokens: 12288
+  guided_json: false
+  final_answer_policy: openai_chat_content_v1
+samples:
+  main: 1
+  repeatability:
+    enabled: true
+    fraction: 0.2
+    stratified_by:
+    - family
+    - depth_bin
+    extra_samples: 2
+    selection_seed: 109702936
+    mode: operational_repeatability_audit
+execution:
+  randomize_call_order: true
+  order_seed: 1250801037
+  # Raised 4 -> 8 on 2026-09-09, recorded as a deviation in docs/freeze_log.md.
+  # The runner uses ONE shared thread pool across all cells, so 8 workers spread over
+  # three models put roughly 1.6 / 1.8 / 4.6 concurrent on Relace / GMICloud / StreamLake
+  # -- MiMo, the critical path, lands where the D10 probe actually measured it (4).
+  # 12 would put MiMo at ~6.8, well past anything tested. Halves wall clock 7.2 h -> 3.6 h.
+  max_concurrent_requests: 8
+  # Lowered 5 -> 2 on 2026-09-08. The observed 504s from the opencode-adapter upstream
+  # arrive in sustained storms, not transient blips: every failed cell in calibration
+  # exhausted all five attempts, so attempts 3-5 were reliably wasted at ~50s each.
+  # Two attempts still cover a genuine one-off; the runner resumes for the rest.
+  max_transport_attempts: 2
+  backoff:
+    initial_seconds: 2
+    multiplier: 2.0
+    max_seconds: 60
+  request_timeout_seconds: 900
+  raw_log: data/raw/main_v2_responses.jsonl
+  # APPROVED 2026-09-09 by the repo owner, in session, against the printed estimate:
+  # 3,360 logical calls, ceiling 6,720 attempts, ~$2.70. Recorded in docs/budget.md.
+  # This flag alone does not start a run: --execute, --approved-attempts and a typed
+  # confirmation are still required, by design.
+  approval_status: APPROVED
+  require_verified_v2_artifacts: true
+grading:
+  strict_parse_is_primary: true
+  strict_parse_failures_count_as_wrong: true
+  forgiving_parser_as_sensitivity: true
+  valid_non_shortest_is_success: true
+exclusions:
+  transport_failure_after_max_attempts: count_as_end_to_end_failure_and_report_separately
+  truncated_by_max_tokens: grade_retained_final_answer_and_report_truncation
+  empty_response: report_as_parse_failure
+qa:
+  token_balance_tolerance: 0.1
+  cross_check_libraries:
+  - pyformlang
+  - automata-lib
+  tokenizer_for_token_balance: deepseek-ai/DeepSeek-V4-Flash-0731
+  require_all_states_reachable: true
+  token_balance_scope: full_model_input_per_model_and_prompt_condition
+  require_prompt_artifact_integrity: true
+analysis:
+  cluster_key: pair_id
+  primary_hypothesis: H1
+  secondary_hypotheses:
+  - H2
+  - H3
+  h1_model: logit P(witness_success) ~ d + prompt_centered + representation + model
+    + d:prompt_centered, RE(pair_id)
+  h1_restricted_to: NEQ_DEPTH
+  bootstrap_resamples: 10000
+  multiplicity_correction: holm
+  primary_metric: end_to_end_witness_success
+  h1_prompt_coding:
+    P0: -0.5
+    P1: 0.5
+  h1_outcome: end_to_end_witness_success
+  secondary_decision_metric: balanced_decision_accuracy
+  primary_sample_index: 0
+  h2_contrast_specification: 'Average marginal effect (AME) of P1 minus P0 on
+    end-to-end valid-witness success, over ground-truth NEQ_DEPTH pairs at
+    sample_index=0 only. Averaged over the realized depth distribution -- balanced at
+    25 pairs per bin by construction, so no depth is privileged -- and over the three
+    models, each of which contributes equally. Estimated from the H1 logistic model
+    INCLUDING the d x prompt_centered interaction, so the reported effect is not the
+    beta2 coefficient (which is the effect at d=0, a depth that does not exist in the
+    design). Uncertainty: pair-clustered bootstrap, 10,000 resamples, percentile 95%
+    CI, resampling whole pair_ids with all their representations, prompts and models
+    kept together. Reported as absolute percentage points AND as an odds ratio.
+    Separation handling: if any model x prompt cell is perfectly separated, refit that
+    stratum with Firth penalized likelihood and label it in the table; never drop the
+    cell, since perfect performance is a result.'
+  secondary_test_family: 'Exactly two confirmatory secondary tests, Holm-corrected
+    across the pair: (1) the H2 trace-prompt AME defined above; (2) the H3 R0/R1
+    decision flip rate, McNemar within each model x prompt cell and pooled with a
+    pair-cluster bootstrap. H1 beta1 is PRIMARY and reported uncorrected. Both raw and
+    Holm-adjusted p-values are reported for the two secondaries. Everything else --
+    balanced decision accuracy, trace correctness, per-family and per-model breakdowns,
+    the 2x2 labels-vs-row-order follow-up, baseline comparisons and the error taxonomy
+    -- is DESCRIPTIVE or EXPLORATORY, is labelled so in every table, and carries no
+    confirmatory claim regardless of what it shows (rule 11).'
+  baselines:
+  - exact_oracle
+  - always_equivalent
+  - always_non_equivalent
+  - accepting_count_difference_one
+  shortestness_role: descriptive
+  flip_denominator: both_strict_valid_boolean_decisions_report_coverage
+  orbit_denominator: all_scheduled_representation_pairs
+paths:
+  pairs_dir: data/pairs/main_v2
+  renderings_dir: data/renderings/main_v2
+  parsed_dir: data/parsed/main_v2
+  tables_dir: analysis/tables/main_v2
+  figures_dir: analysis/figures/main_v2
+implementation_status: M3R_CODE_PRESENT_PILOT_ARTIFACTS_AND_M5R_M6R_M7_M8_M9_PENDING
+model_selection:
+  policy: official_developer_releases_strong_current
+  exclude_prefixes:
+  - vezilka-
+  alternative_if_access_confirmed: official_flagship_qwen
+  select_by_dfa_pilot_rank: false
+gateway:
+  provider: openrouter
+  portal_url: https://openrouter.ai/
+  api_base_url: https://openrouter.ai/api/v1
+  api_base_url_env: OPENROUTER_API_BASE_URL
+  api_key_env: OPENROUTER_API_KEY
+  api_protocol: openai_chat_completions
+  chat_path: /chat/completions
+  capability_evidence: docs/calibration_20260909T102402Z.json (deepseek, pinned) +
+    docs/calibration_20260909T104138Z.json (glm, mimo, pinned); D8 load probe in
+    docs/freeze_log.md
+  routing_policy: MUST pin one provider per model, allow_fallbacks false. OpenRouter
+    routes across providers that differ in quantization, tokenizer and throughput; an
+    unpinned run could cross a deployment boundary mid-schedule, which the protocol
+    forbids pooling across. The three models sit on two hosts (Relace, GMICloud), so a
+    model-to-model difference mixes developer with host to a small degree -- recorded in
+    D8 and belongs in the paper.
+  optional_ranking_headers_sent: false
+  max_parallel_requests: 8

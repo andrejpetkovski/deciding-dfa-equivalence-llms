@@ -1,0 +1,14 @@
+# Line endings must be byte-stable across the Windows dev machine and the Linux cluster.
+# Prompt templates and configs are sha256-hashed at the protocol freeze (docs/freeze_log.md),
+# and JSONL records are hashed for the checksum manifest (Protocol section 9.3). A CRLF
+# conversion on checkout would silently change every one of those hashes.
+* text=auto eol=lf
+
+# Binary assets: never convert, never diff as text.
+*.docx binary
+*.pdf  binary
+*.png  binary
+*.jpg  binary
+
+# Data is written LF by the pipeline; keep it that way.
+*.jsonl text eol=lf

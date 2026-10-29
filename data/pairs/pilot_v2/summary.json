@@ -1,0 +1,1 @@
+{"acceptance_rate":0.888889,"attempts":27,"by_family":{"EQ_EXPAND":6,"EQ_ISO":6,"NEQ_DEPTH":12},"complete":true,"config_id":"pilot_v2","oracle_depth_histogram":{"1":2,"11":1,"2":1,"4":3,"5":1,"6":2,"9":2},"pairs_generated":24,"seed":20260908}

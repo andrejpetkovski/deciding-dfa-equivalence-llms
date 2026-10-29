@@ -1,0 +1,261 @@
+# OpenRouter execution environment (D6). NOT FROZEN, NOT APPROVED.
+#
+# SAME DATASET as configs/pilot_revised.yaml -- identical pairs, renderings and prompts, so
+# pairs_dir and renderings_dir are unchanged. Only the execution environment differs, which
+# is precisely why this is a separate config: a different deployment is a version boundary
+# and its responses must not be pooled with the FINKI run's.
+#
+# Everything marked FILL_AFTER_PROBE is deliberately unset. The wire format, the effective
+# controls and the provider pin are measured, never assumed -- the same discipline that
+# caught max_tokens being inert and temperature=0 being ineffective on FINKI.
+#
+# PROVIDER PINNED 2026-09-09. The first, unpinned probe was routed across ELEVEN providers in
+# twenty-five calls -- the identical repeated prompt hit five of them, reporting 779/779/722/
+# 779/700 prompt tokens and 6.9s-238s latency. Different hosts, different quantization,
+# different tokenizers. Unpinned, this study would pool results across deployments, which the
+# protocol forbids, and gate 8 would be measuring the routing rather than the renderings.
+# allow_fallbacks is false on purpose: a silent failover is exactly the boundary we are
+# preventing, so a provider outage must surface as a transport error the runner can retry.
+#
+# THREE MODELS, ONE SERVING STACK (user decision 2026-09-09, recorded as D7).
+# DeepSeek V4 Flash 0731 / Z.ai GLM 5.3 Flash / Xiaomi MiMo-V2.5 -- three distinct
+# developers, three official open-weight releases, all three served by DeepInfra.
+#
+# Pinning one provider for all three is not a cost or speed choice. It holds the SERVING
+# STACK CONSTANT across the model comparison: same host, same accounting, same quantization
+# policy. Every earlier configuration confounded developer with deployment -- FINKI ran two
+# models on opencode-adapter and one on an Ollama box. This does not.
+config_id: pilot_v2_openrouter
+dataset_id: pilot_v2
+status: TEMPLATE
+study_title: Do LLMs Understand DFA Equivalence?
+protocol_version: v2-amendments-2026-09-07
+frozen_commit: FILL_AT_FREEZE
+frozen_at_utc: FILL_AT_FREEZE
+seed: 20260908
+alphabet:
+- '0'
+- '1'
+pairs:
+  total: 24
+  neq_depth:
+    count: 12
+    state_count: 14
+    bins:
+      1-2: 3
+      3-4: 3
+      5-8: 3
+      9-12: 3
+    exclude_depth_zero: true
+    forbid_epsilon_cue: true
+  eq_iso:
+    count: 6
+    state_count: 14
+  eq_expand:
+    count: 6
+    state_count: 14
+    core_states:
+    - 10
+    - 12
+    require_non_isomorphic: true
+  max_generation_attempts_per_pair: 20000
+  exclude_hashes_from: data/pairs/pilot_v2/exclusion_hashes_from_legacy.txt
+  exclusion_sources:
+  - data/pairs/pilot/pairs.jsonl
+  construction_version: acceptance_swap_v2
+  accepting_count_per_dfa: 7
+representations:
+- id: R0
+  name: R0_sequential
+  labels: stored_order_sequential
+  row_order: initial_then_lexical
+- id: R1
+  name: R1_nonce_shuffled
+  labels: shared_vocabulary_deranged
+  row_order: uniform_shuffle
+  shuffle_accepting_list: true
+prompts:
+  system: prompts/system_v1.txt
+  system_placement: system_role
+  system_sha256: FILL_AT_FREEZE
+  conditions:
+  - id: P0
+    name: P0_direct
+    template: prompts/p0_direct_v1.txt
+    template_sha256: FILL_AT_FREEZE
+    schema: prompts/schema_p0.json
+  - id: P1
+    name: P1_trace
+    template: prompts/p1_trace_v1.txt
+    template_sha256: FILL_AT_FREEZE
+    schema: prompts/schema_p1.json
+models:
+- id: deepseek/deepseek-v4-flash-0731
+  candidate_alias: deepseek/deepseek-v4-flash-0731
+  family: DeepSeek
+  preferred_release: DeepSeek V4 Flash 0731 (GA)
+  identity_status: CALLABLE_PROVIDER_PINNED_2026_09_09
+  developer: DeepSeek
+  weights_public: true
+  answer_adapter: openai_chat_content_v1
+  provider_pin: DeepInfra
+  revision: FILL_AT_FREEZE
+  role: strong_reasoning_candidate
+  reasoning_policy: FILL_AT_FREEZE
+  effective_decoding: FILL_AT_FREEZE
+  tokenizer_evidence: deepseek-ai/DeepSeek-V4-Flash-0731, validated (+4 constant)
+- id: z-ai/glm-5.3-flash
+  candidate_alias: z-ai/glm-5.3-flash
+  family: Z.ai GLM
+  preferred_release: GLM-5.3-Flash
+  developer: Z.ai (Zhipu)
+  weights_public: true
+  identity_status: CALLABLE_PROVIDER_PINNED_2026_09_09
+  provider_pin: DeepInfra
+  answer_adapter: openai_chat_content_v1
+  revision: FILL_AT_FREEZE
+  role: strong_reasoning_candidate
+  reasoning_policy: FILL_AT_FREEZE
+  effective_decoding: FILL_AT_FREEZE
+  tokenizer_evidence: FILL_AT_FREEZE
+- id: xiaomi/mimo-v2.5
+  candidate_alias: xiaomi/mimo-v2.5
+  family: Xiaomi MiMo
+  preferred_release: MiMo-V2.5
+  developer: Xiaomi
+  weights_public: true
+  identity_status: CALLABLE_PROVIDER_PINNED_2026_09_09
+  provider_pin: GMICloud
+  answer_adapter: openai_chat_content_v1
+  revision: FILL_AT_FREEZE
+  role: strong_reasoning_candidate
+  reasoning_policy: FILL_AT_FREEZE
+  effective_decoding: FILL_AT_FREEZE
+  tokenizer_evidence: FILL_AT_FREEZE
+  provider_pin_evidence: 'Measured 2026-09-09, identical prompts: DeepInfra 6.9 tok/s,
+    Xiaomi 22.7, StreamLake 47.8, GMICloud 74.2 (n=3 each for the top two). NovitaAI
+    does not serve this model. Chosen on throughput; the model and its weights are
+    identical across providers, so this is an operational choice, not a model choice.'
+serving:
+  management: university_gateway
+  direct_hosting_required: false
+  infrastructure_evidence: FILL_AT_FREEZE
+  post_template_hash_policy: record_only_if_verifiable_else_null_with_reason
+decoding:
+  policy: per_model_verified_and_frozen
+  preferred_mode: deterministic_where_suitable_and_supported
+  temperature: 0
+  seed: null
+  top_p: null
+  max_output_tokens: 12288
+  guided_json: false
+  final_answer_policy: openai_chat_content_v1
+samples:
+  main: 1
+  repeatability:
+    enabled: false
+    fraction: 0.2
+    stratified_by:
+    - family
+    - depth_bin
+    extra_samples: 2
+    selection_seed: FILL_AT_FREEZE
+    mode: operational_repeatability_audit
+execution:
+  randomize_call_order: true
+  order_seed: 20260908
+  max_concurrent_requests: 2
+  max_transport_attempts: 2
+  backoff:
+    initial_seconds: 2
+    multiplier: 2.0
+    max_seconds: 60
+  request_timeout_seconds: 900
+  raw_log: data/raw/pilot_v2_openrouter_responses.jsonl
+  approval_status: APPROVED
+  require_verified_v2_artifacts: true
+  concurrency_note: '2 as of 2026-09-09. The rate limit is DeepInfra''s, not the account''s:
+    with mimo moved to GMICloud it ran 96/96 clean while deepseek and glm, which share
+    DeepInfra, absorbed 62 429s at concurrency 6. Moving them to other providers would
+    split one model''s cells across two deployments, so the fix is fewer concurrent
+    requests, not a different host.'
+grading:
+  strict_parse_is_primary: true
+  strict_parse_failures_count_as_wrong: true
+  forgiving_parser_as_sensitivity: true
+  valid_non_shortest_is_success: true
+exclusions:
+  transport_failure_after_max_attempts: count_as_end_to_end_failure_and_report_separately
+  truncated_by_max_tokens: grade_retained_final_answer_and_report_truncation
+  empty_response: report_as_parse_failure
+qa:
+  token_balance_tolerance: 0.1
+  cross_check_libraries:
+  - pyformlang
+  - automata-lib
+  tokenizer_for_token_balance: deepseek-ai/DeepSeek-V4-Flash-0731
+  require_all_states_reachable: true
+  token_balance_scope: full_model_input_per_model_and_prompt_condition
+  require_prompt_artifact_integrity: true
+  tokenizer_validation: 'Validated 2026-09-09 against DeepInfra''s own usage.prompt_tokens:
+    local(system)+local(user)+4 reproduced the reported count EXACTLY on 12 of 16
+    probe calls. The other 4 carried a constant +79 provider-side artefact that is
+    not a property of the prompt -- the prompts are byte-identical in length and use
+    one label vocabulary. The local tokenizer is therefore the sound instrument and
+    usage.prompt_tokens is not.'
+analysis:
+  cluster_key: pair_id
+  primary_hypothesis: H1
+  secondary_hypotheses:
+  - H2
+  - H3
+  h1_model: logit P(witness_success) ~ d + prompt_centered + representation + model
+    + d:prompt_centered, RE(pair_id)
+  h1_restricted_to: NEQ_DEPTH
+  bootstrap_resamples: 10000
+  multiplicity_correction: holm
+  primary_metric: end_to_end_witness_success
+  h1_prompt_coding:
+    P0: -0.5
+    P1: 0.5
+  h1_outcome: end_to_end_witness_success
+  secondary_decision_metric: balanced_decision_accuracy
+  primary_sample_index: 0
+  h2_contrast_specification: FILL_AT_FREEZE
+  secondary_test_family: FILL_AT_FREEZE
+  baselines:
+  - exact_oracle
+  - always_equivalent
+  - always_non_equivalent
+  - accepting_count_difference_one
+  shortestness_role: descriptive
+  flip_denominator: both_strict_valid_boolean_decisions_report_coverage
+  orbit_denominator: all_scheduled_representation_pairs
+paths:
+  pairs_dir: data/pairs/pilot_v2
+  renderings_dir: data/renderings/pilot_v2
+  parsed_dir: data/parsed/pilot_v2_openrouter
+  tables_dir: analysis/tables/pilot_v2_openrouter
+  figures_dir: analysis/figures/pilot_v2_openrouter
+implementation_status: M3R_CODE_PRESENT_PILOT_ARTIFACTS_AND_M5R_M6R_M7_M8_M9_PENDING
+model_selection:
+  policy: official_developer_releases_strong_current
+  exclude_prefixes:
+  - vezilka-
+  alternative_if_access_confirmed: official_qwen_release_TAKEN_2026_09_08
+  select_by_dfa_pilot_rank: false
+gateway:
+  provider: openrouter
+  portal_url: https://openrouter.ai/
+  api_base_url: https://openrouter.ai/api/v1
+  api_base_url_env: OPENROUTER_API_BASE_URL
+  api_key_env: OPENROUTER_API_KEY
+  api_protocol: openai_chat_completions
+  chat_path: /chat/completions
+  capability_evidence: docs/calibration_20260909T102402Z.json (deepseek, pinned) +
+    docs/calibration_20260909T104138Z.json (glm, mimo, pinned)
+  routing_policy: MUST pin one provider per model. OpenRouter routes across providers
+    that differ in quantization and throughput; an unpinned run could cross a deployment
+    boundary mid-schedule, which the protocol forbids pooling across.
+  optional_ranking_headers_sent: false
+  max_parallel_requests: 2

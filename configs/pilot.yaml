@@ -1,0 +1,142 @@
+# LEGACY V1 DEVELOPMENT CONFIG. Retained for exact reproduction only.
+# Revised experiment: configs/pilot_revised.yaml; see docs/experiment_revision.md.
+# Historical hosting/model placeholders below are not the current gateway plan.
+# Pilot configuration — Protocol Step 7.
+# NOT frozen. This config exists to exercise the whole pipeline and to produce the evidence
+# that justifies the values in main_frozen.yaml. Pilot pairs are discarded from the main set.
+
+config_id: pilot_v1
+study_title: "Do LLMs Understand DFA Equivalence?"
+protocol_version: "docx 2026-09-04"
+
+seed: 20260907            # pilot seed is public; the MAIN seed stays private until inference
+alphabet: ["0", "1"]
+
+pairs:
+  # 24 pilot pairs: 12 non-equivalent spanning all four bins, 12 equivalent (§Step 7).
+  neq_depth:
+    count: 12
+    state_count: 14
+    bins: {"1-2": 3, "3-4": 3, "5-8": 3, "9-12": 3}
+    exclude_depth_zero: true          # §Step 3
+    forbid_epsilon_cue: true          # initial acceptance must agree in A and B
+  eq_iso:
+    count: 6
+    state_count: 14
+  eq_expand:
+    count: 6
+    state_count: 14
+    core_states: [10, 12]             # inclusive range, minimized before expansion
+    require_non_isomorphic: true
+  max_generation_attempts_per_pair: 5000
+
+representations:
+  - id: R0
+    name: R0_canonical
+    labels: bfs_sequential            # q00, q01, ... by BFS order
+    row_order: initial_then_lexical
+  - id: R1
+    name: R1_nonce_shuffled
+    labels: nonce_cvc                 # length-matched consonant-vowel-consonant, e.g. miv, zup
+    label_length: 3
+    row_order: uniform_shuffle
+    shuffle_accepting_list: true
+
+prompts:
+  system: prompts/system_v1.txt
+  # Where the system message goes. FROZEN STUDY-WIDE, not per model: some open-weight chat
+  # templates reject a system role, but folding it for one model only would make the
+  # interface differ across models, which §8.4 forbids. If a chosen model cannot take a
+  # system turn, switch this to prepend_to_user for ALL models and record the change.
+  system_placement: system_role
+  conditions:
+    - id: P0
+      name: P0_direct
+      template: prompts/p0_direct_v1.txt
+      schema: prompts/schema_p0.json
+    - id: P1
+      name: P1_trace
+      template: prompts/p1_trace_v1.txt
+      schema: prompts/schema_p1.json
+
+models:
+  # Pilot uses two models (§5.8 minimum pilot = 2 models). The main study needs three from at
+  # least two independent model families (§Step 8) — see docs/model_manifest.md.
+  # Locally served open-weight models on the faculty cluster. revision = HF commit SHA, which
+  # is the immutable model identity. Never serve a bare repo name.
+  - id: FILL_FROM_CLUSTER
+    family: FILL_FROM_CLUSTER
+    hf_repo: FILL_FROM_CLUSTER
+    revision: FILL_FROM_CLUSTER
+    role: strong_reasoning
+    is_reasoning_model: FILL_FROM_CLUSTER    # decides whether the <think> strip rule applies
+    endpoint: http://localhost:8000/v1       # vLLM OpenAI-compatible server
+  - id: FILL_FROM_CLUSTER
+    family: FILL_FROM_CLUSTER
+    hf_repo: FILL_FROM_CLUSTER
+    revision: FILL_FROM_CLUSTER
+    role: small_instruct
+    is_reasoning_model: false
+    endpoint: http://localhost:8000/v1
+
+serving:
+  engine: vllm
+  engine_version: FILL_FROM_CLUSTER          # part of the reproducibility record
+  tensor_parallel_size: FILL_FROM_CLUSTER    # changes numerical results; freeze it
+  dtype: bfloat16
+  quantization: null
+  chat_completions_endpoint: true            # applies each model's chat template server-side
+  max_model_len: FILL_FROM_CLUSTER
+
+decoding:
+  # Local serving restores real decoding control, unlike current commercial APIs.
+  temperature: 0.0
+  top_p: 1.0
+  top_k: -1
+  seed: 20260907
+  max_output_tokens: 8000                    # revise from the pilot's observed p99
+  guided_json: false                         # OFF: forcing valid JSON would delete RQ4 (§8.5)
+  strip_reasoning_block: FILL_AT_FREEZE      # e.g. "<think>...</think>"; applied to ALL models or none
+
+samples:
+  main: 1
+  repeatability:
+    enabled: false                    # pilot does not need the repeat subset
+    fraction: 0.20
+    extra_samples: 2
+    mode: determinism_audit           # under greedy decoding, repeats audit the pipeline
+                                      # rather than estimate sampling variance (docs/cluster.md §4)
+
+execution:
+  randomize_call_order: true
+  order_seed: 424242
+  max_concurrent_requests: 8          # vLLM client-side concurrency
+  max_transport_attempts: 5           # transport / rate-limit ONLY — never retry on content
+  backoff: {initial_seconds: 2, multiplier: 2.0, max_seconds: 60}
+  request_timeout_seconds: 900
+  raw_log: data/raw/pilot_responses.jsonl
+
+grading:
+  strict_parse_is_primary: true
+  strict_parse_failures_count_as_wrong: true
+  forgiving_parser_as_sensitivity: true      # may strip exactly one surrounding code fence
+
+qa:
+  token_balance_tolerance: 0.10       # |R1/R0 - 1| <= 0.10
+  cross_check_libraries: [pyformlang, automata-lib]   # gate 1 runs both; cost is trivial
+  tokenizer_for_token_balance: FILL_FROM_CLUSTER   # HF tokenizer used for QA gate 8
+  require_all_states_reachable: true
+
+analysis:
+  cluster_key: pair_id
+  primary_hypothesis: H1
+  secondary_hypotheses: [H2, H3]
+  bootstrap_resamples: 10000
+  multiplicity_correction: holm
+
+paths:
+  pairs_dir: data/pairs/pilot
+  renderings_dir: data/renderings/pilot
+  parsed_dir: data/parsed/pilot
+  tables_dir: analysis/tables/pilot
+  figures_dir: analysis/figures/pilot

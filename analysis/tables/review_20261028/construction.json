@@ -1,0 +1,1322 @@
+{
+  "status": "Post-review descriptive analysis; primary grades unchanged",
+  "input_sha256": {
+    "data\\pairs\\main_v2\\pairs.jsonl": "8415683ac6013b750393c56af397d8061549377dbd4010d9f5d651b28a4140d8",
+    "data\\renderings\\main_v2\\manifest.jsonl": "8d9a6b6eecdb2aaf2d8d138ff8253e3967fd33c1d2b9d572473180f612b90582",
+    "data\\parsed\\main_v2\\graded.jsonl": "a1f8cc6d780035e71ea408a0396b84864b3d74359141e0a71e93160b5f48bb5a"
+  },
+  "structural_audit": [
+    {
+      "pair_id": "p_000000",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000001",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000002",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000003",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000004",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000005",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000006",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000007",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000008",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000009",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000010",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000011",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000012",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000013",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000014",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000015",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000016",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000017",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000018",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000019",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000020",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000021",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000022",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000023",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000024",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000025",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000026",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000027",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000028",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000029",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000030",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000031",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000032",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000033",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000034",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000035",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000036",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000037",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000038",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000039",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000040",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000041",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000042",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000043",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000044",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000045",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000046",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000047",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000048",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000049",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000050",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000051",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000052",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000053",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000054",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000055",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000056",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000057",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000058",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000059",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000060",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000061",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000062",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000063",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000064",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000065",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000066",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000067",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000068",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000069",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000070",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000071",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000072",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000073",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000074",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000075",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000076",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000077",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000078",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000079",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000080",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000081",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000082",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000083",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000084",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000085",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000086",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000087",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000088",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000089",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000090",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000091",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000092",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000093",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000094",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000095",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000096",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000097",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000098",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    },
+    {
+      "pair_id": "p_000099",
+      "acceptance_mismatches": 2,
+      "identical_stored_tables": false,
+      "R0_all_corresponding_labels_equal": false,
+      "R0_identical_displayed_transitions": false,
+      "R1_all_corresponding_labels_equal": false,
+      "R1_identical_displayed_transitions": false
+    }
+  ],
+  "by_family_rendering": [
+    {
+      "family": "EQ_EXPAND",
+      "rendering": "R0",
+      "successes": 252,
+      "calls": 300,
+      "rate": 0.84,
+      "metric": "decision_accuracy"
+    },
+    {
+      "family": "EQ_EXPAND",
+      "rendering": "R1",
+      "successes": 250,
+      "calls": 300,
+      "rate": 0.8333333333333334,
+      "metric": "decision_accuracy"
+    },
+    {
+      "family": "EQ_ISO",
+      "rendering": "R0",
+      "successes": 268,
+      "calls": 300,
+      "rate": 0.8933333333333333,
+      "metric": "decision_accuracy"
+    },
+    {
+      "family": "EQ_ISO",
+      "rendering": "R1",
+      "successes": 256,
+      "calls": 300,
+      "rate": 0.8533333333333334,
+      "metric": "decision_accuracy"
+    },
+    {
+      "family": "NEQ_DEPTH",
+      "rendering": "R0",
+      "successes": 536,
+      "calls": 600,
+      "rate": 0.8933333333333333,
+      "metric": "valid_witness"
+    },
+    {
+      "family": "NEQ_DEPTH",
+      "rendering": "R1",
+      "successes": 521,
+      "calls": 600,
+      "rate": 0.8683333333333333,
+      "metric": "valid_witness"
+    }
+  ],
+  "by_family_rendering_model_prompt": [
+    {
+      "family": "EQ_EXPAND",
+      "rendering": "R0",
+      "model_id": "deepseek/deepseek-v4-flash-0731",
+      "prompt_condition": "P0",
+      "successes": 50,
+      "calls": 50,
+      "rate": 1.0,
+      "metric": "decision_accuracy"
+    },
+    {
+      "family": "EQ_EXPAND",
+      "rendering": "R0",
+      "model_id": "deepseek/deepseek-v4-flash-0731",
+      "prompt_condition": "P1",
+      "successes": 47,
+      "calls": 50,
+      "rate": 0.94,
+      "metric": "decision_accuracy"
+    },
+    {
+      "family": "EQ_EXPAND",
+      "rendering": "R0",
+      "model_id": "xiaomi/mimo-v2.5",
+      "prompt_condition": "P0",
+      "successes": 38,
+      "calls": 50,
+      "rate": 0.76,
+      "metric": "decision_accuracy"
+    },
+    {
+      "family": "EQ_EXPAND",
+      "rendering": "R0",
+      "model_id": "xiaomi/mimo-v2.5",
+      "prompt_condition": "P1",
+      "successes": 38,
+      "calls": 50,
+      "rate": 0.76,
+      "metric": "decision_accuracy"
+    },
+    {
+      "family": "EQ_EXPAND",
+      "rendering": "R0",
+      "model_id": "z-ai/glm-5.3-flash",
+      "prompt_condition": "P0",
+      "successes": 39,
+      "calls": 50,
+      "rate": 0.78,
+      "metric": "decision_accuracy"
+    },
+    {
+      "family": "EQ_EXPAND",
+      "rendering": "R0",
+      "model_id": "z-ai/glm-5.3-flash",
+      "prompt_condition": "P1",
+      "successes": 40,
+      "calls": 50,
+      "rate": 0.8,
+      "metric": "decision_accuracy"
+    },
+    {
+      "family": "EQ_EXPAND",
+      "rendering": "R1",
+      "model_id": "deepseek/deepseek-v4-flash-0731",
+      "prompt_condition": "P0",
+      "successes": 45,
+      "calls": 50,
+      "rate": 0.9,
+      "metric": "decision_accuracy"
+    },
+    {
+      "family": "EQ_EXPAND",
+      "rendering": "R1",
+      "model_id": "deepseek/deepseek-v4-flash-0731",
+      "prompt_condition": "P1",
+      "successes": 48,
+      "calls": 50,
+      "rate": 0.96,
+      "metric": "decision_accuracy"
+    },
+    {
+      "family": "EQ_EXPAND",
+      "rendering": "R1",
+      "model_id": "xiaomi/mimo-v2.5",
+      "prompt_condition": "P0",
+      "successes": 39,
+      "calls": 50,
+      "rate": 0.78,
+      "metric": "decision_accuracy"
+    },
+    {
+      "family": "EQ_EXPAND",
+      "rendering": "R1",
+      "model_id": "xiaomi/mimo-v2.5",
+      "prompt_condition": "P1",
+      "successes": 35,
+      "calls": 50,
+      "rate": 0.7,
+      "metric": "decision_accuracy"
+    },
+    {
+      "family": "EQ_EXPAND",
+      "rendering": "R1",
+      "model_id": "z-ai/glm-5.3-flash",
+      "prompt_condition": "P0",
+      "successes": 40,
+      "calls": 50,
+      "rate": 0.8,
+      "metric": "decision_accuracy"
+    },
+    {
+      "family": "EQ_EXPAND",
+      "rendering": "R1",
+      "model_id": "z-ai/glm-5.3-flash",
+      "prompt_condition": "P1",
+      "successes": 43,
+      "calls": 50,
+      "rate": 0.86,
+      "metric": "decision_accuracy"
+    },
+    {
+      "family": "EQ_ISO",
+      "rendering": "R0",
+      "model_id": "deepseek/deepseek-v4-flash-0731",
+      "prompt_condition": "P0",
+      "successes": 49,
+      "calls": 50,
+      "rate": 0.98,
+      "metric": "decision_accuracy"
+    },
+    {
+      "family": "EQ_ISO",
+      "rendering": "R0",
+      "model_id": "deepseek/deepseek-v4-flash-0731",
+      "prompt_condition": "P1",
+      "successes": 49,
+      "calls": 50,
+      "rate": 0.98,
+      "metric": "decision_accuracy"
+    },
+    {
+      "family": "EQ_ISO",
+      "rendering": "R0",
+      "model_id": "xiaomi/mimo-v2.5",
+      "prompt_condition": "P0",
+      "successes": 42,
+      "calls": 50,
+      "rate": 0.84,
+      "metric": "decision_accuracy"
+    },
+    {
+      "family": "EQ_ISO",
+      "rendering": "R0",
+      "model_id": "xiaomi/mimo-v2.5",
+      "prompt_condition": "P1",
+      "successes": 39,
+      "calls": 50,
+      "rate": 0.78,
+      "metric": "decision_accuracy"
+    },
+    {
+      "family": "EQ_ISO",
+      "rendering": "R0",
+      "model_id": "z-ai/glm-5.3-flash",
+      "prompt_condition": "P0",
+      "successes": 44,
+      "calls": 50,
+      "rate": 0.88,
+      "metric": "decision_accuracy"
+    },
+    {
+      "family": "EQ_ISO",
+      "rendering": "R0",
+      "model_id": "z-ai/glm-5.3-flash",
+      "prompt_condition": "P1",
+      "successes": 45,
+      "calls": 50,
+      "rate": 0.9,
+      "metric": "decision_accuracy"
+    },
+    {
+      "family": "EQ_ISO",
+      "rendering": "R1",
+      "model_id": "deepseek/deepseek-v4-flash-0731",
+      "prompt_condition": "P0",
+      "successes": 46,
+      "calls": 50,
+      "rate": 0.92,
+      "metric": "decision_accuracy"
+    },
+    {
+      "family": "EQ_ISO",
+      "rendering": "R1",
+      "model_id": "deepseek/deepseek-v4-flash-0731",
+      "prompt_condition": "P1",
+      "successes": 50,
+      "calls": 50,
+      "rate": 1.0,
+      "metric": "decision_accuracy"
+    },
+    {
+      "family": "EQ_ISO",
+      "rendering": "R1",
+      "model_id": "xiaomi/mimo-v2.5",
+      "prompt_condition": "P0",
+      "successes": 39,
+      "calls": 50,
+      "rate": 0.78,
+      "metric": "decision_accuracy"
+    },
+    {
+      "family": "EQ_ISO",
+      "rendering": "R1",
+      "model_id": "xiaomi/mimo-v2.5",
+      "prompt_condition": "P1",
+      "successes": 35,
+      "calls": 50,
+      "rate": 0.7,
+      "metric": "decision_accuracy"
+    },
+    {
+      "family": "EQ_ISO",
+      "rendering": "R1",
+      "model_id": "z-ai/glm-5.3-flash",
+      "prompt_condition": "P0",
+      "successes": 42,
+      "calls": 50,
+      "rate": 0.84,
+      "metric": "decision_accuracy"
+    },
+    {
+      "family": "EQ_ISO",
+      "rendering": "R1",
+      "model_id": "z-ai/glm-5.3-flash",
+      "prompt_condition": "P1",
+      "successes": 44,
+      "calls": 50,
+      "rate": 0.88,
+      "metric": "decision_accuracy"
+    },
+    {
+      "family": "NEQ_DEPTH",
+      "rendering": "R0",
+      "model_id": "deepseek/deepseek-v4-flash-0731",
+      "prompt_condition": "P0",
+      "successes": 97,
+      "calls": 100,
+      "rate": 0.97,
+      "metric": "valid_witness"
+    },
+    {
+      "family": "NEQ_DEPTH",
+      "rendering": "R0",
+      "model_id": "deepseek/deepseek-v4-flash-0731",
+      "prompt_condition": "P1",
+      "successes": 95,
+      "calls": 100,
+      "rate": 0.95,
+      "metric": "valid_witness"
+    },
+    {
+      "family": "NEQ_DEPTH",
+      "rendering": "R0",
+      "model_id": "xiaomi/mimo-v2.5",
+      "prompt_condition": "P0",
+      "successes": 83,
+      "calls": 100,
+      "rate": 0.83,
+      "metric": "valid_witness"
+    },
+    {
+      "family": "NEQ_DEPTH",
+      "rendering": "R0",
+      "model_id": "xiaomi/mimo-v2.5",
+      "prompt_condition": "P1",
+      "successes": 79,
+      "calls": 100,
+      "rate": 0.79,
+      "metric": "valid_witness"
+    },
+    {
+      "family": "NEQ_DEPTH",
+      "rendering": "R0",
+      "model_id": "z-ai/glm-5.3-flash",
+      "prompt_condition": "P0",
+      "successes": 93,
+      "calls": 100,
+      "rate": 0.93,
+      "metric": "valid_witness"
+    },
+    {
+      "family": "NEQ_DEPTH",
+      "rendering": "R0",
+      "model_id": "z-ai/glm-5.3-flash",
+      "prompt_condition": "P1",
+      "successes": 89,
+      "calls": 100,
+      "rate": 0.89,
+      "metric": "valid_witness"
+    },
+    {
+      "family": "NEQ_DEPTH",
+      "rendering": "R1",
+      "model_id": "deepseek/deepseek-v4-flash-0731",
+      "prompt_condition": "P0",
+      "successes": 97,
+      "calls": 100,
+      "rate": 0.97,
+      "metric": "valid_witness"
+    },
+    {
+      "family": "NEQ_DEPTH",
+      "rendering": "R1",
+      "model_id": "deepseek/deepseek-v4-flash-0731",
+      "prompt_condition": "P1",
+      "successes": 94,
+      "calls": 100,
+      "rate": 0.94,
+      "metric": "valid_witness"
+    },
+    {
+      "family": "NEQ_DEPTH",
+      "rendering": "R1",
+      "model_id": "xiaomi/mimo-v2.5",
+      "prompt_condition": "P0",
+      "successes": 83,
+      "calls": 100,
+      "rate": 0.83,
+      "metric": "valid_witness"
+    },
+    {
+      "family": "NEQ_DEPTH",
+      "rendering": "R1",
+      "model_id": "xiaomi/mimo-v2.5",
+      "prompt_condition": "P1",
+      "successes": 74,
+      "calls": 100,
+      "rate": 0.74,
+      "metric": "valid_witness"
+    },
+    {
+      "family": "NEQ_DEPTH",
+      "rendering": "R1",
+      "model_id": "z-ai/glm-5.3-flash",
+      "prompt_condition": "P0",
+      "successes": 90,
+      "calls": 100,
+      "rate": 0.9,
+      "metric": "valid_witness"
+    },
+    {
+      "family": "NEQ_DEPTH",
+      "rendering": "R1",
+      "model_id": "z-ai/glm-5.3-flash",
+      "prompt_condition": "P1",
+      "successes": 83,
+      "calls": 100,
+      "rate": 0.83,
+      "metric": "valid_witness"
+    }
+  ]
+}

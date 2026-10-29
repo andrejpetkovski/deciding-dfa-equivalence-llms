@@ -1,0 +1,7 @@
+scope,cells,success,valid but not shortest,invalid witness,said equivalent,parse failure,transport failure,truncated
+ALL,1200,990,67,73,1,69,0,43
+deepseek/deepseek-v4-flash-0731,400,342,41,10,0,7,0,7
+xiaomi/mimo-v2.5,400,310,9,23,1,57,0,31
+z-ai/glm-5.3-flash,400,338,17,40,0,5,0,5
+P0,600,503,40,28,0,29,0,21
+P1,600,487,27,45,1,40,0,22

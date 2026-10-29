@@ -1,0 +1,32 @@
+{
+ "status": 403,
+ "body": {
+  "error": {
+   "code": "403",
+   "message": "litellm.PermissionDeniedError: Model is blocked",
+   "param": null,
+   "type": null
+  }
+ },
+ "response_headers": {
+  "content-length": "109",
+  "content-security-policy": "frame-ancestors 'none'",
+  "content-type": "application/json",
+  "date": "Mon, 07 Sep 2026 18:08:12 GMT",
+  "referrer-policy": "strict-origin-when-cross-origin",
+  "server": "uvicorn",
+  "strict-transport-security": "max-age=31536000",
+  "via": "1.1 Caddy",
+  "x-content-type-options": "nosniff, nosniff",
+  "x-frame-options": "DENY",
+  "x-litellm-applied-guardrails": "gateway-credential-protection",
+  "x-litellm-applied-policies": "gateway-baseline",
+  "x-litellm-call-id": "d0f99cb1-d100-4a1a-83ba-293ceca0e924",
+  "x-litellm-key-max-budget": "123123.0",
+  "x-litellm-key-rpm-limit": "123123",
+  "x-litellm-key-spend": "0.0002656104",
+  "x-litellm-key-tpm-limit": "123123",
+  "x-litellm-policy-sources": "gateway-baseline=scope:*",
+  "x-litellm-response-cost": "0"
+ }
+}

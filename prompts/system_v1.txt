@@ -1,0 +1,5 @@
+You are evaluating two complete deterministic finite automata over alphabet {0,1}.
+Follow the requested JSON schema exactly. Do not include Markdown or explanatory prose.
+The empty word is represented by the empty string "".
+If the automata are equivalent, return witness: null.
+If they are not equivalent, return a word accepted by exactly one automaton.

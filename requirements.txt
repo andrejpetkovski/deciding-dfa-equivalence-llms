@@ -1,0 +1,35 @@
+# Dev-machine requirements (Windows/laptop): generation, QA, grading, analysis.
+# Gateway HTTP client dependencies are included below. requirements-cluster.txt is
+# optional historical direct-hosting material, not a prerequisite for platform access.
+# Python 3.11+ required (Protocol Step 0).
+# After installing:  pip freeze > requirements.lock.txt
+
+# --- core ---
+pydantic>=2.7
+PyYAML>=6.0
+numpy>=1.26
+pandas>=2.2
+
+# --- formal-language cross-check for QA gate 1 ---
+pyformlang>=1.0.7
+automata-lib>=9.0.0
+networkx>=3.2
+
+# --- statistics (section 10) ---
+scipy>=1.13
+statsmodels>=0.14      # GEE + mixed logistic models, McNemar
+
+# --- figures (section 10.7) ---
+matplotlib>=3.8
+
+# --- tokenizers: needed for QA gate 8 (R1/R0 token balance) and prompt assembly ---
+transformers>=4.44     # tokenizer + chat template only; no torch needed on the dev machine
+sentencepiece>=0.2
+
+# --- calling a served model over HTTP (works for a vLLM/SGLang OpenAI-compatible endpoint) ---
+httpx>=0.27
+
+# --- tooling ---
+pytest>=8.0
+hypothesis>=6.100
+ruff>=0.5

@@ -1,0 +1,29 @@
+Design precision for the frozen design: interval widths, NOT a power guarantee.
+Emitted by: python -m scripts.design_precision
+Captured as an artifact under post-freeze deviation D15 so the manuscript can cite it
+under rule 6. The script itself is unchanged and predates the main run.
+------------------------------------------------------------------------------
+Assumed effect: 75% success in bin 1-2 falling to 35% in bin 9-12,
+                a slope of -0.191 log-odds per unit depth.
+
+H1 confirmatory depth slope (GEE, pair-clustered)
+   NEQ pairs  main calls   slope CI half-width  vs effect
+         100        2400                0.0577       3.3x
+         140        2880                0.0493       3.9x
+         200        3600                0.0411       4.6x
+         300        4800                0.0339       5.6x
+
+Per-bin success rate (cluster bootstrap on pair_id)
+  view                                      pairs/bin  CI half-width
+  --- 100 NEQ pairs ---
+    pooled over models x prompts x reps            25          9.4%
+    one model x prompt (a Figure 1 line)           25         14.5%
+    one model x prompt x representation            25         18.8%
+  --- 200 NEQ pairs ---
+    pooled over models x prompts x reps            50          6.7%
+    one model x prompt (a Figure 1 line)           50         10.3%
+    one model x prompt x representation            50         13.5%
+
+Interval widths under an assumed effect and intra-pair correlation, not a power
+guarantee. A floor or ceiling effect would make sample size the wrong lever (§4.2);
+the pilot settles that.

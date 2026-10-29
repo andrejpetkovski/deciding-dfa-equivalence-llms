@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "P1_trace strict response contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "equivalent",
+    "witness",
+    "trace_A",
+    "trace_B"
+  ],
+  "properties": {
+    "equivalent": {
+      "type": "boolean"
+    },
+    "witness": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[01]*$"
+    },
+    "trace_A": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "trace_B": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$comment": "Strict parse (Protocol section 8.5). Grader rules beyond the schema: equivalent=true requires witness/trace_A/trace_B all null; equivalent=false requires a string witness and traces of length len(witness)+1 whose entries are state labels from the rendering the model was shown. Labels are mapped back through the rendering bijection before comparison with the simulation."
+}

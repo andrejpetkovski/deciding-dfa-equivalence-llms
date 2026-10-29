@@ -1,0 +1,11 @@
+metric,numerator,denominator,rate,denominator_description
+end_to_end_witness_success,1057,1200,0.8808333333333334,all scheduled ground-truth non-equivalent primary cells
+conditional_witness_validity,1057,1206,0.8764510779436152,parsed outputs predicting non-equivalent
+shortest_witness_success,990,1200,0.825,all scheduled ground-truth non-equivalent primary cells (descriptive)
+trace_correctness,537,559,0.960644007155635,P1 non-equivalent cells with a witness
+parse_failure_rate,167,2400,0.06958333333333333,"received final-answer outputs, including empty answers"
+decision_flip_rate,58,1047,0.055396370582617004,R0/R1 cell pairs with two strict-valid Boolean decisions
+orbit_success,983,1200,0.8191666666666667,all scheduled R0/R1 cell pairs
+decision_accuracy_equivalent,1026,1200,0.855,all scheduled ground-truth equivalent primary cells
+decision_accuracy_non_equivalent,1130,1200,0.9416666666666667,all scheduled ground-truth non-equivalent primary cells
+balanced_decision_accuracy,,2400,0.8983333333333333,mean of the two class accuracies (secondary)
